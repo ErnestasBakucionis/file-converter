@@ -1,0 +1,126 @@
+﻿.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+h1.glitch {
+    font-size: 4rem;
+    position: relative;
+    color: var(--accent-color);
+    animation: glitch 1s infinite;
+}
+
+    h1.glitch::before,
+    h1.glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: var(--accent-color);
+    }
+
+    h1.glitch::before {
+        animation: glitchTop 1s infinite linear;
+        top: -2px;
+        clip-path: inset(0 0 45% 0);
+    }
+
+    h1.glitch::after {
+        animation: glitchBottom 1s infinite linear;
+        top: 2px;
+        clip-path: inset(55% 0 0 0);
+    }
+
+@keyframes glitchTop {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-2px);
+    }
+
+    40% {
+        transform: translateX(2px);
+    }
+
+    60% {
+        transform: translateX(-1px);
+    }
+
+    80% {
+        transform: translateX(1px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(2px);
+    }
+
+    40% {
+        transform: translateX(-2px);
+    }
+
+    60% {
+        transform: translateX(1px);
+    }
+
+    80% {
+        transform: translateX(-1px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.error-message {
+    font-size: 1.25rem;
+    color: var(--muted-text);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.back-link {
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+    .back-link:hover {
+        background-color: var(--accent-color);
+        color: var(--background-color);
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

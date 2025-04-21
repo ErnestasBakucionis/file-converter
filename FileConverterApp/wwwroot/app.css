@@ -1,1 +1,35 @@
+@import './variables.css';
 
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    height: 100%;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    button:hover {
+        background-color: #ff6b7d;
+    }
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: var(--spacing);
+}

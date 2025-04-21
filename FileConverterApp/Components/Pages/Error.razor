@@ -1,16 +1,18 @@
 ﻿@page "/error/{Code:int}"
 
-<h1>Error @Code</h1>
+<PageTitle>Error</PageTitle>
 
-@if (Code == 404)
-{
-    <p>We couldn't find that page.</p>
-}
-else
-{
-    <p>Something went wrong. Try again later.</p>
-}
+<div class="error-container">
+    <h1 class="glitch" data-text="Error @Code">Error @Code</h1>
 
-@code {
-    [Parameter] public int Code { get; set; }
-}
+    @if (Code == 404)
+    {
+        <p class="error-message">We couldn't find that page.</p>
+    }
+    else
+    {
+        <p class="error-message">Something went wrong. Try again later.</p>
+    }
+
+    <a class="back-link" href="/">← Back to Home</a>
+</div>

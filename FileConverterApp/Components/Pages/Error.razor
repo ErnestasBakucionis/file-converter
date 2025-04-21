@@ -1,0 +1,16 @@
+﻿@page "/error/{Code:int}"
+
+<h1>Error @Code</h1>
+
+@if (Code == 404)
+{
+    <p>We couldn't find that page.</p>
+}
+else
+{
+    <p>Something went wrong. Try again later.</p>
+}
+
+@code {
+    [Parameter] public int Code { get; set; }
+}
